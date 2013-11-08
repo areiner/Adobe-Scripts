@@ -39,12 +39,18 @@ try
 			{
 				if(sel[i].typename == "TextFrame"){
 					if(sel[i].story.textRange.justification == Justification.LEFT){
+						// shim to get cs 5 and 6 to rejustfy http://forums.adobe.com/message/5057780
+						sel[i].story.resize(100.1,100.1);
+						sel[i].story.resize(99.9,99.9);
 						sel[i].story.textRange.justification = Justification.RIGHT;
 					}
 					else if(sel[i].story.textRange.justification == Justification.RIGHT){
 						sel[i].story.textRange.justification = Justification.LEFT;
 					}
 					else if(sel[i].story.textRange.justification == Justification.FULLJUSTIFYLASTLINELEFT){
+						// shim to get cs 5 and 6 to rejustfy http://forums.adobe.com/message/5057780
+						sel[i].story.resize(100.1,100.1);
+						sel[i].story.resize(99.9,99.9);
 						sel[i].story.textRange.justification = Justification.FULLJUSTIFYLASTLINERIGHT;
 					}
 					else if(sel[i].story.textRange.justification == Justification.FULLJUSTIFYLASTLINERIGHT){
