@@ -1,0 +1,1 @@
+app.activeDocument.selection[0].story.textRange.justification = Justification.LEFT;
